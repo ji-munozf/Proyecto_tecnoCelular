@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>TecnoCelular</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-image">
+  <h1>Registro</h1>
+
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="10">
+        <div class="items">
+          <ion-label>Números (Rut):</ion-label>
+          <ion-input type="number" placeholder="Ingrese los numeros de su rut" style="font-size: small;"
+            (keypress)="numberOnlyValidation($event)" maxlength="9" [(ngModel)]="nroRut"></ion-input>
+
+          <div>
+            <ion-label>Digito verificador (Rut):</ion-label>
+            <ion-input type="number" placeholder="Ingrese el número verificador"
+              (keypress)="numberOnlyValidation($event)" maxlength="1" [(ngModel)]="dv"></ion-input>
+            <p class="dv" style="font-size: small;">(Si su rut termina K ingrese 0)</p>
+          </div>
+
+          <ion-label>Nombre:</ion-label>
+          <ion-input type="text" [(ngModel)]="nombres" placeholder="Ingrese su nombre" (keypress)="onKeyPress($event)"></ion-input>
+
+          <ion-label>Apellido paterno:</ion-label>
+          <ion-input type="text" [(ngModel)]="appaterno" placeholder="Ingrese su apellido paterno" (keypress)="onKeyPress($event)"></ion-input>
+
+          <ion-label>Apellido materno:</ion-label>
+          <ion-input type="text" [(ngModel)]="apmaterno" placeholder="Ingrese su apellido materno" (keypress)="onKeyPress($event)"></ion-input>
+
+          <ion-label>Nombre de usuario:</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario" placeholder="Ingrese su nombre de usuario"></ion-input>
+
+          <ion-label>Contraseña:</ion-label>
+          <ion-input type="password" [(ngModel)]="password1" placeholder="Ingrese su contraseña" matInput [type]="hide ? 'password' : 'text'">
+            <button style="background: none; position: float; margin: 5px;" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon style="color: #fff;">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </ion-input>
+
+          <ion-label>Repetir contraseña:</ion-label>
+          <ion-input type="password" [(ngModel)]="password2" placeholder="Ingrese su contraseña" matInput [type]="hide1 ? 'password' : 'text'">
+            <button style="background: none; position: float; margin: 5px;" mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+              <mat-icon style="color: #fff;">{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </ion-input>
+        </div>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="boton">
+    <ion-button expand="full" shape="round" color="light" (click)="registrarse()">Registrarse</ion-button>
+  </div>
+  <div class="boton">
+    <ion-button expand="full" shape="round" color="light" (click)="regresar()">Volver</ion-button>
+  </div>
+  
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="light">
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+
+        <ion-menu-toggle>
+          <ion-item [routerLink]="['/perfil']">Mi perfil</ion-item>
+          <ion-item [routerLink]="['/about-us']">Sobre nosotros</ion-item>
+          <ion-item [routerLink]="['/not-found']">Test Not Found</ion-item>
+          <ion-item (click)="cerrarSesion()">Cerrar sesión</ion-item>
+        </ion-menu-toggle>
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

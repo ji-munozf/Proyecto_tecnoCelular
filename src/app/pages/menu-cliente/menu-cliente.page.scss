@@ -1,0 +1,61 @@
+ion-title {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.bg-image {
+    --background: url('../../../assets/img/background-of-gradient-lights.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    margin: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+
+h3 {
+    text-align: center;
+    margin: 15px;
+    color: #fff;
+}
+
+ion-card {
+    margin: 20px;
+}
+
+ion-card-title {
+    text-align: center;
+    font-weight: 500;
+    font-size: medium;
+}
+
+ion-card-content {
+    text-align: center;
+    font-size: large;
+    font-weight: 500;
+}
+
+.boton-card {
+    margin: 10px;
+}
+
+.boton-card .ver-mas {
+    margin-bottom: 10px;
+}
+
+.boton-mas-productos {
+    margin: 10px;
+}
+ion-footer ion-icon{
+    font-size: 30px;
+}
+
+ion-footer ion-label{
+    font-size: 10px;
+    text-align: center; 
+}

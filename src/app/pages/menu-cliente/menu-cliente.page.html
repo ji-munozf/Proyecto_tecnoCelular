@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: #000;"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>TecnoCelular</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-image">
+  <h1>Bienvenido a TecnoCelular</h1>
+
+  <h3>¡Celulares nuevos!</h3>
+
+  <ion-card *ngFor="let x of listaProducto">
+    <img alt="Silhouette of mountains" src="{{x.img}}"/>
+    <ion-card-header>
+      <ion-card-title>{{x.nombre | uppercase}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{x.precio | currency:'CLP'}}
+    </ion-card-content>
+
+    <div class="boton-card">
+      <ion-button class="ver-mas" shape="round" expand="block" (click)="detalleProducto(x)">Ver más
+        <ion-icon name="add-circle" slot="start"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+
+        <ion-tab-button [routerLink]="['/mis-compras']">
+          <ion-icon name="bag"></ion-icon>
+          <ion-label>Mis compras</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="['/tienda']">
+          <ion-icon name="storefront"></ion-icon>
+          <ion-label>Tienda</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button [routerLink]="['/carrito']">
+          <ion-icon name="cart"></ion-icon>
+          <ion-label>Carrito</ion-label>
+        </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

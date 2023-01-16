@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button style="color: #000;"></ion-back-button>
+    </ion-buttons>
+    <ion-title>TecnoCelular</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-image">
+  <h1>Modificar producto</h1>
+
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="10">
+        <div class="items">
+          <ion-label>Código:</ion-label>
+          <ion-input type="text" [(ngModel)]="codigoProducto"></ion-input>
+
+          <ion-label>Nombre de producto:</ion-label>
+          <ion-input type="text" [(ngModel)]="nombreProducto"></ion-input>
+
+          <ion-label>Precio:</ion-label>
+          <ion-input type="number" [(ngModel)]="precioProducto"></ion-input>
+
+          <ion-label>Stock:</ion-label>
+          <ion-input type="number" [(ngModel)]="stockProducto"></ion-input>
+
+          <ion-label>ID marca:</ion-label>
+          <ion-input type="number" [(ngModel)]="id_marca"></ion-input>
+
+          <ion-label>Descripción del producto:</ion-label>
+          <ion-textarea type="text" style="margin-bottom: 10px;" rows="2" [(ngModel)]="descripcionProducto"></ion-textarea>
+
+          <ion-label>Imagen del producto:</ion-label>
+          <img alt="No hay imagen" src="{{ imgProducto }}"/>
+          <ion-button expand="full" shape="round" color="light" (click)="TakePic()">Cambiar foto</ion-button>
+
+        </div>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="boton">
+    <ion-button expand="full" shape="round" color="light" (click)="modificar()">Guardar cambios</ion-button>
+  </div>
+
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>TecnoCelular</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-image">
+
+
+  <h1>Agregar producto</h1>
+
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="10">
+        <div class="items">
+          <ion-label>Código:</ion-label>
+          <ion-input type="text" [(ngModel)]="codigoProducto" placeholder="Ingrese el codigo del producto"></ion-input>
+
+          <ion-label>Nombre de producto:</ion-label>
+          <ion-input type="text" [(ngModel)]="nombreProducto" placeholder="Ingrese el nombre del producto"></ion-input>
+
+          <ion-label>Precio:</ion-label>
+          <ion-input type="number" [(ngModel)]="precioProducto" placeholder="Ingrese el precio"></ion-input>
+
+          <ion-label>Stock:</ion-label>
+          <ion-input type="number" [(ngModel)]="stockProducto" placeholder="Ingrese el stock del producto"></ion-input>
+
+          <ion-label>Descripción del producto:</ion-label>
+          <ion-textarea type="text" [(ngModel)]="descripcionProducto" placeholder="Ingrese la descripción del producto"
+            rows="4" style="margin-bottom: 10px;"></ion-textarea>
+
+          <ion-label>Marca del producto:</ion-label>
+          <mat-form-field appearance="outline" expand="full" style="margin-bottom: 30px;">
+            <mat-select placeholder="Seleccione una marca" [(ngModel)]="listaMarca.nombre">
+              <mat-option *ngFor="let marca of listaMarca" [value]="marca.id">
+                {{marca.nombreMarca}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <ion-label>Imagen del producto:</ion-label>
+          <ion-button expand="full" shape="round" color="light" (click)="TakePic()">Seleccionar foto</ion-button>
+          <div class="vertical-center">
+            <img class="" class="ion-align-self-end" *ngIf="src != '' " [src]="src" alt="src" />
+          </div>
+
+        </div>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="boton">
+    <ion-button expand="full" shape="round" color="light" (click)="agregar()">Agregar producto</ion-button>
+  </div>
+  <div class="boton">
+    <ion-button expand="full" shape="round" color="light" (click)="regresar()">Volver</ion-button>
+  </div>
+
+</ion-content>

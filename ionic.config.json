@@ -1,0 +1,7 @@
+{
+  "name": "tecnoCelular",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

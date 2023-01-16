@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>TecnoCelular</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-image">
+  <h1>¡Bienvenido Administrador!</h1>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" offset="4">
+        <img src="/assets/img/logo.png" alt="No hay imagen">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <h3>¿Que operación quiere realizar?</h3>
+
+  <div class="boton-card">
+    <ion-button class="ver-mas" shape="round" expand="block" color="light" style="margin-bottom: 15px;" [routerLink]="['/listar-usuarios-admin']">
+      Lista de usuarios
+    </ion-button>
+
+    <ion-button class="ver-mas" shape="round" expand="block" color="light" style="margin-bottom: 15px;" [routerLink]="['/listar-productos-admin']">
+      Lista de productos
+    </ion-button>
+
+    <ion-button class="ver-mas" shape="round" expand="block" color="light" style="margin-bottom: 15px;" [routerLink]="['/listar-marca-admin']">
+      Lista de marcas
+    </ion-button>
+
+    <ion-button shape="round" expand="block" color="light" style="margin-bottom: 15px;" [routerLink]="['/agregar-productos']">
+      Agregar un producto
+    </ion-button>
+
+    <ion-button shape="round" expand="block" color="light" style="margin-bottom: 15px;" [routerLink]="['/agregar-marca']">
+      Agregar una marca
+    </ion-button>
+
+    <ion-button shape="round" expand="block" color="light" style="margin-bottom: 15px;" (click)="cerrarSesion()">
+      Cerrar sesión
+    </ion-button>
+  </div>
+</ion-content>

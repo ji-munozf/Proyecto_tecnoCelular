@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button style="color: #000;"></ion-back-button>
+    </ion-buttons>
+    <ion-title>TecnoCelular</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-image">
+  <h1>Detalle del producto</h1>
+
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="10">
+        <div class="items">
+
+          <img alt="Silhouette of mountains" src="{{ imgProducto }}"/>
+
+          <ion-label>Código:</ion-label>
+          <ion-input type="text" disabled>{{codigoProducto | uppercase}}</ion-input>
+
+          <ion-label>Nombre de producto:</ion-label>
+          <ion-input type="text" disabled>{{nombreProducto | uppercase}}</ion-input>
+
+          <ion-label>Precio:</ion-label>
+          <ion-input type="number" disabled>{{precioProducto | currency:'CLP'}}</ion-input>
+
+          <ion-label>Stock:</ion-label>
+          <ion-input type="number" disabled>{{stockProducto}}</ion-input>
+
+          <ion-label>Descripción del producto:</ion-label>
+          <ion-textarea type="text" style="margin-bottom: 10px;" disabled>{{descripcionProducto}}</ion-textarea>
+          
+          <ion-label>Cantidad:</ion-label>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-button color="light" (click)="restItem();">
+                  <ion-icon name="remove-outline"></ion-icon>
+                </ion-button>
+              </ion-col>
+              <ion-col>
+                <div class="cantidad">{{cantidad}}</div>
+              </ion-col>
+              <ion-col>
+                <ion-button color="light" (click)="addItem();">
+                  <ion-icon name="add-outline"></ion-icon>
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <ion-label>Total: {{total | currency:'CLP'}}</ion-label>
+
+          <div class="boton">
+            <ion-button expand="full" shape="round" color="light">Añadir al carrito</ion-button>
+          </div>
+
+        </div>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

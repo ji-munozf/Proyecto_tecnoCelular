@@ -1,0 +1,30 @@
+ion-title {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.bg-image {
+    --background: url('../../../assets/img/background-of-gradient-lights.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    margin: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+
+h3 {
+    text-align: center;
+    margin: 15px;
+    color: #fff;
+}
+
+.boton-card {
+    margin: 10px;
+}

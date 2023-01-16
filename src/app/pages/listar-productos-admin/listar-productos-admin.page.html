@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button style="color: #000;"></ion-back-button>
+    </ion-buttons>
+    <ion-title>TecnoCelular</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-image">
+  <h1>Listado de productos</h1>
+
+  <ion-card *ngFor="let x of listaProducto">
+    <img alt="" src="{{x.img}}"/>
+    <ion-card-header>
+      <ion-card-title>{{x.nombre | uppercase}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{x.precio | currency:'CLP'}}
+    </ion-card-content>
+    <div class="boton-card">
+      <ion-button class="ver-mas" shape="round" expand="block" color="success" style="margin-bottom: 10px;" (click)="modificarDatos(x)">Modificar
+        <ion-icon name="create-outline" slot="start"></ion-icon>
+      </ion-button>
+      
+      <ion-button class="ver-mas" shape="round" expand="block" color="danger" (click)="eliminar(x)">Eliminar
+        <ion-icon name="trash-outline" slot="start"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-card>
+
+
+</ion-content>
+
+
+
+
+
